@@ -1,22 +1,80 @@
+---
+import './src/styles/global.css'
+const { title }	= Astro.props;
+
+---
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta property="og:title" content="Miguel Luna" />
+    <meta property="og:description" content="Software Developer" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Miguel Luna Portfolio" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+    <slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
+	:root {
+    --background: rgb(18, 18, 18);
+    --navbar-background: rgba(18, 18, 18, 0.993);
+    --white: #e5e7eb;
+		--primary: #34d399;
+    --primary-10: rgba(100, 255, 218, 0.1);
+    --primary-30: rgba(100, 255, 218, 0.3);
+  }
 	html,
 	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+    font-family:
+      "Inter",
+      -apple-system,
+      system-ui,
+      sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+		scroll-behavior: smooth;
+		background-color: var(--white);
 	}
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+	  /* Scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--container);
+    border-radius: 30px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--background);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--pink);
+  }
+
+  /* Scrollbar styles for Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) var(--container);
+  }
 </style>
