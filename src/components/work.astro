@@ -1,0 +1,14 @@
+---
+import Section from './section.astro'
+import userData from '../constants/data.json'
+
+const { experience: e } = userData;
+
+const experience = e[0];
+---
+
+<Section>
+  <div>
+    <p class='text-(--gray)'>{experience.date}</p>
+  </div>
+<Section>
